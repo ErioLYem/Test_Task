@@ -7,10 +7,9 @@ import json
 global TITLE
 global MENU
 list_card = []
-headers = {"User-Agent": "CrookedHands/2.0 (EVM x8), CurlyFingers20/1;p"}
 #Блок для авторизации
 work = Session()
-work.get("https://quotes.toscrape.com/", headers=headers)
+work.get("https://quotes.toscrape.com/")
 response1 = work.get("https://quotes.toscrape.com/login", headers=headers)
 soup4 = BeautifulSoup(response1.text, "lxml")
 token = soup4.find("form").find("input").get("value")
